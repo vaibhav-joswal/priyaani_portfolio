@@ -69,12 +69,27 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
 <a class="text-sm font-medium transition-colors text-primary" href="contact.html">Contact</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium bg-primary text-background-dark px-6 py-2 rounded-full font-bold transition-transform hover:scale-105" href="experience.html">Resume</a>
 </nav>
-<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-primary text-background-dark text-sm font-bold transition-transform active:scale-95">
-<span>Let's Talk</span>
+<button id="menu-toggle" class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/95 backdrop-blur-lg translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 p-10 text-slate-100">
+<button id="menu-close" class="absolute top-6 right-6 text-primary p-2">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<nav class="flex flex-col items-center gap-10 text-center">
+<a class="mobile-link text-3xl font-serif font-bold hover:text-primary transition-colors" href="projects.html">Work</a>
+<a class="mobile-link text-3xl font-serif font-bold hover:text-primary transition-colors" href="about.html">About</a>
+<a class="mobile-link text-3xl font-serif font-bold text-primary" href="contact.html">Contact</a>
+<a class="mobile-link text-3xl font-serif font-bold hover:text-primary transition-colors" href="#">Services</a>
+<a class="mobile-link bg-primary text-background-dark px-10 py-4 rounded-full text-xl font-bold mt-4" href="experience.html">Resume</a>
+</nav>
+</div>
 <!-- Hero Section -->
 <section class="flex flex-col items-center justify-center pt-24 pb-16 text-center px-4">
 <h1 class="text-6xl md:text-8xl font-serif font-black tracking-tight mb-4">
@@ -189,4 +204,5 @@
 </div>
 </footer>
 </div>
+<script src="assets/js/navigation.js"></script>
 </body></html>
