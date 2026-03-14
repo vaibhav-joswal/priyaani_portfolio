@@ -1,0 +1,257 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#c8a87e",
+            "background-light": "#f5f0eb",
+            "background-dark": "#0e0e0e",
+            "neutral-dark": "#1d1a15",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+            "italic-serif": ["Cormorant Garamond", "serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      gap: 2rem;
+    }
+
+    .marquee-content {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+      gap: 2rem;
+      animation: scroll 20s linear infinite;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="fixed top-0 z-50 w-full backdrop-blur-md bg-background-dark/80 border-b border-primary/10 px-6 md:px-20 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<h2 class="font-serif text-xl font-bold tracking-tight">Priyani Bais</h2>
+</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="projects.html">Work</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+<a class="bg-primary text-background-dark px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity" href="experience.html">
+            Resume
+          </a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row min-h-screen pt-20">
+<div class="w-full md:w-[60%] flex flex-col justify-center px-6 md:px-20 py-12 md:py-0">
+<span class="text-primary text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4">Design Student — JKLU Jaipur</span>
+<h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-[0.9]">
+          Priyani <br/>Bais
+        </h1>
+<p class="font-italic-serif text-2xl md:text-3xl italic text-slate-400 max-w-lg mb-10">
+          Crafting meaningful experiences through design
+        </p>
+<div class="flex">
+<button class="border border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-background-dark transition-all duration-300 group">
+            View My Work
+            <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="w-full md:w-[40%] relative min-h-[400px] md:min-h-screen">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 via-neutral-dark to-background-dark" data-alt="Elegant abstract gradient portrait placeholder with soft gold and charcoal tones"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-3/4 h-3/4 rounded-xl border border-primary/20 backdrop-blur-sm bg-primary/5 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of Priyani Bais" src="assets/user_provided_portrait.png"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Marquee Ticker -->
+<div class="bg-primary py-4 overflow-hidden border-y border-primary">
+<div class="marquee whitespace-nowrap">
+<div class="marquee-content flex items-center">
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">ILLUSTRATION ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">ILLUSTRATION ✦</span>
+</div>
+<div aria-hidden="true" class="marquee-content flex items-center">
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">ILLUSTRATION ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">ILLUSTRATION ✦</span>
+</div>
+</div>
+</div>
+<!-- Selected Works Section -->
+<section class="bg-background-dark py-24 px-6 md:px-20">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-serif text-4xl md:text-6xl font-bold">Selected Works</h2>
+<div class="hidden md:block text-primary/60 text-sm tracking-widest uppercase mb-2">Portfolio 2024</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+<!-- Project 1 -->
+<div class="group flex flex-col gap-6">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract minimalist branding design with gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCJc9dFfD5VRDo18QkjhDZXmPIsaBcBI1QUIy-fUwa-Kugd6rGb9TWNvm-BLJpESEMXyo4oT2rnE7Y8et-vZ2bYuPgh6PIoZ7p6InGynvdp9MVsY_8IYBmVjumRpk7uiE5Jfk3e1JdDEK_CupUp07CYVM2iW6cHLnEuOO2zTTv-QRu8wdtuCTWV_cY_TDL3GeXsMLm8y-uWyFmPVvTtpX_KaLyIpuC6kmiveTUF4M8-rMxcxZOlpCQWCztEf4zqT6LM9DNaPPBNzB"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Visual Identity</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Branding</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors"><a href="case_study_template.html">Elysian Spirits Rebrand</a></h3>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group flex flex-col gap-6 md:mt-24">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Clean mobile app interface for a banking application" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Sxi9sr4AJOgz_JDaU-Jzh-OOvN7SxDHs35WMrRpH7O0QC59nPlxvwVg0DezTShUzHawd8U6mEFK9K2vd6pONODHGqHiaGUvspdbuB-3p8RmUT_SJI2_Bc_s5X44fl70XID0zyStptBnQgfhvPu7a8Cb0WLqZMssPVlJgYBipehWur9esEO_xesAQ0rziDHX_Rz-QoAPLMCY7L0YdDw8NmrduWk9y2_F6lD2OW9G4oJBz_-jCUcGQhIpbMWdNMfYZZX0ex2-VGDVS"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">UI/UX</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Fintech</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors"><a href="case_study_template.html">Neo Bank Experience</a></h3>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group flex flex-col gap-6">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Experimental typography layout for an editorial magazine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxs7KxKJnwln-QFi0lvtpF9JcTgFiduxnNDAz8IVw0OTCi1M_S8iMvLP0Gtbf1BElHQR1lA5vpOm3a3wBOlJrPJNM9Q0fTNHYGp4zs075d0hEhDNEqXGkobTVsCeosPDqiLkii14Zc65bj4bmeiiMOtCdUnWKE4H6JWhsLsSkauezUp1dyuAs6WEbkBlUJRH4z3zsJUB52zvL-Pmx8no6gl1FqXovWECSVa-4XymUASSuReWrnz7HotbLlSmDXEB6cMZ7dZrmGcpq6"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Typography</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Editorial</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors"><a href="case_study_template.html">Modern Type Systems</a></h3>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group flex flex-col gap-6 md:mt-24">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Digital illustration collection with vibrant soft gradients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALbUPg_4Q63Nr92My-zjN7sRnxOo1hP3BOeH5qCA_nJNunP0SOy_C5L8CxQBswtK-ji40FzVYzvDbHny7pP1ibsGe_4bQVMisgKpfdgT-lqObKIMFB9IEt1iFei6_ds9Yx-M6L0oo9SlJ8LocpY5ldq0wZwZRnzOLAPdKmeLDQ-QPApwkoHgL-4yCn6o5O1yOK6PYREYIPlrdq8K5dcnglsaUKd993DgVtzwdrTLICBjlBtqJ6Piy7Re5-MoybFlLrB_TrKuxicu5g"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Illustration</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Digital Art</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors"><a href="case_study_template.html">Chromatica Illustration Series</a></h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Teaser Section -->
+<section class="bg-background-light py-32 px-6 overflow-hidden">
+<div class="max-w-4xl mx-auto text-center">
+<div class="text-primary text-sm font-bold tracking-widest uppercase mb-8">About Me</div>
+<h2 class="font-serif text-4xl md:text-6xl lg:text-7xl text-background-dark leading-tight mb-12">
+          Designing with <span class="italic font-normal">purpose</span> &amp; <span class="font-black">passion</span>
+</h2>
+<p class="text-background-dark/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+          As a design student at JKLU, I focus on bridging the gap between human needs and digital solutions. I believe every pixel should tell a story and every interaction should feel intuitive.
+        </p>
+<button class="bg-background-dark text-background-light px-8 py-4 rounded-full font-bold hover:bg-neutral-dark transition-colors">
+          Learn More About Me
+        </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-dark pt-32 pb-12 px-6 md:px-20 border-t border-primary/10">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24">
+<div class="max-w-2xl">
+<h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-8">Let's Create Together</h2>
+<a class="text-2xl md:text-4xl font-light hover:text-primary transition-colors border-b-2 border-primary/30 pb-2" href="mailto:hello@priyanibais.com">
+              hello@priyanibais.com
+            </a>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="text-sm font-medium">LinkedIn</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="text-sm font-medium">Behance</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="text-sm font-medium">Instagram</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/10 gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<span class="font-serif font-bold text-lg">Priyani Bais</span>
+</div>
+<div class="text-slate-500 text-sm">
+            © 2024 Priyani Bais. All rights reserved.
+          </div>
+<div class="text-slate-500 text-sm">
+            Handcrafted with Intention
+          </div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

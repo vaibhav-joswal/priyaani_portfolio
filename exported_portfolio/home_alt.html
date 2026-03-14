@@ -1,0 +1,287 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#c8a87e",
+            "background-light": "#f5f0eb",
+            "background-dark": "#0e0e0e",
+            "neutral-dark": "#1d1a15",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+            "italic-serif": ["Cormorant Garamond", "serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+            'float': 'floating-gradient 15s ease infinite',
+            'fade-up': 'fade-up 1s ease-out forwards',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            'floating-gradient': {
+              '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+              '33%': { transform: 'translate(10%, -5%) scale(1.1)' },
+              '66%': { transform: 'translate(-5%, 5%) scale(0.95)' },
+            },
+            'fade-up': {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+      .reveal-on-scroll {
+        opacity: 0;
+      }
+      .reveal-on-scroll.visible {
+        animation: fade-up 1s ease-out forwards;
+      }
+      .stagger-1 { animation-delay: 0.1s; }
+      .stagger-2 { animation-delay: 0.2s; }
+      .stagger-3 { animation-delay: 0.3s; }
+      .project-card-glow:hover {
+        box-shadow: 0 0 30px rgba(200, 168, 126, 0.3);
+      }
+      .hero-gradient-bg {
+        background: radial-gradient(circle at 50% 50%, rgba(200, 168, 126, 0.15) 0%, transparent 70%);
+      }
+    }
+  </style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.1
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300 scroll-smooth">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="fixed top-0 z-50 w-full backdrop-blur-md bg-background-dark/80 border-b border-primary/10 px-6 md:px-20 py-4 transition-all duration-500">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-3 group">
+<div class="text-primary transition-transform duration-300 group-hover:rotate-12">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<h2 class="font-serif text-xl font-bold tracking-tight">Priyani Bais</h2>
+</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full" href="projects.html">Work</a>
+<a class="text-sm font-medium hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all hover:after:w-full" href="contact.html">Contact</a>
+<a class="bg-primary text-background-dark px-6 py-2 rounded-full text-sm font-bold hover:bg-transparent hover:text-primary border border-primary transition-all duration-300" href="experience.html">
+          Resume
+        </a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<section class="relative flex flex-col md:flex-row min-h-screen pt-20 overflow-hidden">
+<div class="absolute inset-0 pointer-events-none z-0">
+<div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] hero-gradient-bg animate-float blur-[80px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] hero-gradient-bg animate-float blur-[100px] [animation-delay:-5s]"></div>
+</div>
+<div class="w-full md:w-[60%] flex flex-col justify-center px-6 md:px-20 py-12 md:py-0 z-10">
+<div class="reveal-on-scroll stagger-1">
+<span class="text-primary text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Design Student — JKLU Jaipur</span>
+<h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-[0.9]">
+          Priyani <br/>Bais
+        </h1>
+</div>
+<p class="reveal-on-scroll stagger-2 font-italic-serif text-2xl md:text-3xl italic text-slate-400 max-w-lg mb-10">
+        Crafting meaningful experiences through design
+      </p>
+<div class="reveal-on-scroll stagger-3 flex">
+<button class="group relative overflow-hidden border border-primary text-primary px-10 py-4 rounded-full font-bold text-lg transition-all duration-500 hover:text-background-dark">
+<span class="absolute inset-0 bg-primary translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"></span>
+<span class="relative z-10 flex items-center">
+            View My Work
+            <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</button>
+</div>
+</div>
+<div class="w-full md:w-[40%] relative min-h-[400px] md:min-h-screen z-10 reveal-on-scroll">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-neutral-dark to-background-dark"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-3/4 h-3/4 rounded-xl border border-primary/20 backdrop-blur-sm bg-primary/5 overflow-hidden group">
+<img alt="Designer Portrait" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out" src="assets/user_provided_portrait.png"/>
+</div>
+</div>
+</div>
+</section>
+<div class="bg-primary py-6 overflow-hidden border-y border-primary/30 relative z-20">
+<div class="flex animate-marquee whitespace-nowrap">
+<div class="flex items-center gap-8 min-w-full">
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">ILLUSTRATION ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">ILLUSTRATION ✦</span>
+</div>
+<div class="flex items-center gap-8 min-w-full">
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">ILLUSTRATION ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">UI/UX DESIGN ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">BRANDING ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">TYPOGRAPHY ✦</span>
+<span class="text-background-dark text-xl md:text-2xl font-black uppercase">ILLUSTRATION ✦</span>
+</div>
+</div>
+</div>
+<section class="bg-background-dark py-24 px-6 md:px-20" id="work">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16 reveal-on-scroll">
+<h2 class="font-serif text-4xl md:text-6xl font-bold">Selected Works</h2>
+<div class="hidden md:block text-primary/60 text-sm tracking-widest uppercase mb-2">Portfolio 2024</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+<div class="reveal-on-scroll stagger-1 group flex flex-col gap-6">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10 transition-all duration-500 project-card-glow">
+<img alt="Elysian Spirits Rebrand" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCJc9dFfD5VRDo18QkjhDZXmPIsaBcBI1QUIy-fUwa-Kugd6rGb9TWNvm-BLJpESEMXyo4oT2rnE7Y8et-vZ2bYuPgh6PIoZ7p6InGynvdp9MVsY_8IYBmVjumRpk7uiE5Jfk3e1JdDEK_CupUp07CYVM2iW6cHLnEuOO2zTTv-QRu8wdtuCTWV_cY_TDL3GeXsMLm8y-uWyFmPVvTtpX_KaLyIpuC6kmiveTUF4M8-rMxcxZOlpCQWCztEf4zqT6LM9DNaPPBNzB"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Visual Identity</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Branding</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors duration-300">Elysian Spirits Rebrand</h3>
+</div>
+</div>
+<div class="reveal-on-scroll stagger-2 group flex flex-col gap-6 md:mt-24">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10 transition-all duration-500 project-card-glow">
+<img alt="Neo Bank Experience" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Sxi9sr4AJOgz_JDaU-Jzh-OOvN7SxDHs35WMrRpH7O0QC59nPlxvwVg0DezTShUzHawd8U6mEFK9K2vd6pONODHGqHiaGUvspdbuB-3p8RmUT_SJI2_Bc_s5X44fl70XID0zyStptBnQgfhvPu7a8Cb0WLqZMssPVlJgYBipehWur9esEO_xesAQ0rziDHX_Rz-QoAPLMCY7L0YdDw8NmrduWk9y2_F6lD2OW9G4oJBz_-jCUcGQhIpbMWdNMfYZZX0ex2-VGDVS"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">UI/UX</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Fintech</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors duration-300">Neo Bank Experience</h3>
+</div>
+</div>
+<div class="reveal-on-scroll stagger-1 group flex flex-col gap-6">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10 transition-all duration-500 project-card-glow">
+<img alt="Modern Type Systems" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxs7KxKJnwln-QFi0lvtpF9JcTgFiduxnNDAz8IVw0OTCi1M_S8iMvLP0Gtbf1BElHQR1lA5vpOm3a3wBOlJrPJNM9Q0fTNHYGp4zs075d0hEhDNEqXGkobTVsCeosPDqiLkii14Zc65bj4bmeiiMOtCdUnWKE4H6JWhsLsSkauezUp1dyuAs6WEbkBlUJRH4z3zsJUB52zvL-Pmx8no6gl1FqXovWECSVa-4XymUASSuReWrnz7HotbLlSmDXEB6cMZ7dZrmGcpq6"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Typography</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Editorial</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors duration-300">Modern Type Systems</h3>
+</div>
+</div>
+<div class="reveal-on-scroll stagger-2 group flex flex-col gap-6 md:mt-24">
+<div class="aspect-[16/10] overflow-hidden rounded-xl bg-neutral-dark border border-primary/10 transition-all duration-500 project-card-glow">
+<img alt="Chromatica Series" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALbUPg_4Q63Nr92My-zjN7sRnxOo1hP3BOeH5qCA_nJNunP0SOy_C5L8CxQBswtK-ji40FzVYzvDbHny7pP1ibsGe_4bQVMisgKpfdgT-lqObKIMFB9IEt1iFei6_ds9Yx-M6L0oo9SlJ8LocpY5ldq0wZwZRnzOLAPdKmeLDQ-QPApwkoHgL-4yCn6o5O1yOK6PYREYIPlrdq8K5dcnglsaUKd993DgVtzwdrTLICBjlBtqJ6Piy7Re5-MoybFlLrB_TrKuxicu5g"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Illustration</span>
+<span class="px-4 py-1 rounded-full border border-primary/40 text-primary text-xs font-medium uppercase">Digital Art</span>
+</div>
+<h3 class="font-serif text-3xl font-bold group-hover:text-primary transition-colors duration-300">Chromatica Series</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light py-32 px-6 overflow-hidden relative" id="about">
+<div class="max-w-4xl mx-auto text-center reveal-on-scroll">
+<div class="text-primary text-sm font-bold tracking-widest uppercase mb-8 stagger-1">About Me</div>
+<h2 class="font-serif text-4xl md:text-6xl lg:text-7xl text-background-dark leading-tight mb-12 stagger-2">
+        Designing with <span class="italic font-normal">purpose</span> &amp; <span class="font-black">passion</span>
+</h2>
+<p class="text-background-dark/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 stagger-3">
+        As a design student at JKLU, I focus on bridging the gap between human needs and digital solutions. I believe every pixel should tell a story and every interaction should feel intuitive.
+      </p>
+<button class="group relative overflow-hidden bg-background-dark text-background-light px-10 py-4 rounded-full font-bold transition-all duration-500 hover:text-background-dark border border-background-dark">
+<span class="absolute inset-0 bg-primary translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"></span>
+<span class="relative z-10">Learn More About Me</span>
+</button>
+</div>
+</section>
+<footer class="bg-background-dark pt-32 pb-12 px-6 md:px-20 border-t border-primary/10 relative z-10">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24 reveal-on-scroll">
+<div class="max-w-2xl">
+<h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-8 transition-all duration-700">Let's Create Together</h2>
+<a class="text-2xl md:text-4xl font-light hover:text-primary transition-all duration-300 border-b-2 border-primary/30 pb-2 inline-block" href="mailto:hello@priyanibais.com">
+            hello@priyanibais.com
+          </a>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-all duration-300 flex items-center gap-2 group" href="#">
+<span class="text-sm font-medium">LinkedIn</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-all duration-300 flex items-center gap-2 group" href="#">
+<span class="text-sm font-medium">Behance</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-all duration-300 flex items-center gap-2 group" href="#">
+<span class="text-sm font-medium">Instagram</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/10 gap-6 reveal-on-scroll">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<span class="font-serif font-bold text-lg">Priyani Bais</span>
+</div>
+<div class="text-slate-500 text-sm">
+          © 2024 Priyani Bais. All rights reserved.
+        </div>
+<div class="text-slate-500 text-sm">
+          Handcrafted with Intention
+        </div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
