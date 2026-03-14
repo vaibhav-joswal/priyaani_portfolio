@@ -5,48 +5,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Priyani Bais - Experience &amp; Resume</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#c8a87e",
-                        "primary-muted": "#d4a853",
-                        "primary-light": "#e8d5b7",
-                        "background-light": "#f7f7f6",
-                        "background-dark": "#0e0e0e",
-                        "card-dark": "#1a1a1a",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"],
-                        "serif": ["'Playfair Display'", "serif"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px",
-                    },
-                },
-            },
-        }
-    </script>
-<style>
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: #2a2a2a;
-            z-index: 0;
-        }
-    </style>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
+
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
 <div class="relative flex min-h-screen flex-col overflow-x-hidden">
@@ -75,8 +36,12 @@
 <p class="text-slate-400 uppercase tracking-[0.4em] text-xs md:text-sm font-medium">My journey so far</p>
 </div>
 </section>
+<!-- Work Experience Section -->
 <section class="py-20 bg-background-dark relative">
-<div class="max-w-6xl mx-auto px-6 relative timeline-line">
+<div class="max-w-6xl mx-auto px-6 mb-16">
+<h2 class="font-serif text-4xl md:text-5xl text-primary font-bold text-center mb-12">Work Experience</h2>
+<div class="relative timeline-line">
+<!-- Experience 1 -->
 <div class="relative flex items-center justify-between mb-16 w-full">
 <div class="w-full md:w-[45%] bg-card-dark p-8 rounded-xl border border-white/5 relative shadow-2xl">
 <div class="flex flex-col gap-1 mb-4">
@@ -96,6 +61,7 @@
 <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background-dark z-10"></div>
 <div class="hidden md:block w-[45%]"></div>
 </div>
+<!-- Experience 2 -->
 <div class="relative flex items-center justify-between mb-16 w-full">
 <div class="hidden md:block w-[45%]"></div>
 <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-primary-muted rounded-full border-4 border-background-dark z-10"></div>
@@ -115,45 +81,10 @@
 </ul>
 </div>
 </div>
-<div class="relative flex items-center justify-between mb-16 w-full">
-<div class="w-full md:w-[45%] bg-card-dark p-8 rounded-xl border border-white/5 relative shadow-2xl">
-<div class="flex flex-col gap-1 mb-4">
-<h3 class="font-serif text-2xl text-slate-100">B.Des in Visual Communication</h3>
-<div class="flex items-center gap-2 text-primary-light font-medium text-sm">
-<span>Design Institute</span>
-<span class="w-1 h-1 bg-primary-light rounded-full"></span>
-<span>2017 - 2021</span>
-</div>
-</div>
-<ul class="space-y-3 text-slate-400 text-sm list-disc pl-4 marker:text-primary-light">
-<li>Graduated with Honors, specializing in Human-Computer Interaction.</li>
-<li>Dean's list for consecutive 3 years for academic excellence.</li>
-<li>Led the annual University Design Fest as a lead coordinator.</li>
-</ul>
-</div>
-<div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-primary-light rounded-full border-4 border-background-dark z-10"></div>
-<div class="hidden md:block w-[45%]"></div>
-</div>
-<div class="relative flex items-center justify-between w-full">
-<div class="hidden md:block w-[45%]"></div>
-<div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-primary-muted rounded-full border-4 border-background-dark z-10"></div>
-<div class="w-full md:w-[45%] bg-card-dark p-8 rounded-xl border border-white/5 relative shadow-2xl">
-<div class="flex flex-col gap-1 mb-4">
-<h3 class="font-serif text-2xl text-slate-100">Design Workshop Lead</h3>
-<div class="flex items-center gap-2 text-primary-muted font-medium text-sm">
-<span>Design Hub</span>
-<span class="w-1 h-1 bg-primary-muted rounded-full"></span>
-<span>2020</span>
-</div>
-</div>
-<ul class="space-y-3 text-slate-400 text-sm list-disc pl-4 marker:text-primary-muted">
-<li>Organized and led 5+ workshops on Figma and Design Thinking.</li>
-<li>Facilitated group brainstorming sessions for local community startups.</li>
-</ul>
-</div>
 </div>
 </div>
 </section>
+
 <section class="py-32 bg-background-dark">
 <div class="max-w-6xl mx-auto px-6">
 <h2 class="font-serif text-4xl md:text-5xl text-slate-100 mb-16 text-center">Achievements</h2>

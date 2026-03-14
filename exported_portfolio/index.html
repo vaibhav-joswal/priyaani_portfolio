@@ -2,61 +2,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#c8a87e",
-            "background-light": "#f5f0eb",
-            "background-dark": "#0e0e0e",
-            "neutral-dark": "#1d1a15",
-          },
-          fontFamily: {
-            "display": ["Inter", "sans-serif"],
-            "serif": ["Playfair Display", "serif"],
-            "italic-serif": ["Cormorant Garamond", "serif"],
-          },
-          borderRadius: {
-            "DEFAULT": "1rem",
-            "lg": "2rem",
-            "xl": "3rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-<style>
-    .marquee {
-      display: flex;
-      overflow: hidden;
-      user-select: none;
-      gap: 2rem;
-    }
+<link href="assets/css/main.css" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
 
-    .marquee-content {
-      flex-shrink: 0;
-      display: flex;
-      justify-content: space-around;
-      min-width: 100%;
-      gap: 2rem;
-      animation: scroll 20s linear infinite;
-    }
-
-    @keyframes scroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
-  </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
 <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
@@ -94,10 +42,10 @@
           Crafting meaningful experiences through design
         </p>
 <div class="flex">
-<button class="border border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-background-dark transition-all duration-300 group">
+<a href="#work" class="border border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-background-dark transition-all duration-300 group inline-flex items-center">
             View My Work
             <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 <div class="w-full md:w-[40%] relative min-h-[400px] md:min-h-screen">
@@ -112,7 +60,7 @@
 <!-- Marquee Ticker -->
 <div class="bg-primary py-4 overflow-hidden border-y border-primary">
 <div class="marquee whitespace-nowrap">
-<div class="marquee-content flex items-center">
+<div class="marquee-content animate-marquee flex items-center">
 <span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">UI/UX DESIGN ✦</span>
 <span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">BRANDING ✦</span>
 <span class="text-background-dark text-xl md:text-2xl font-black uppercase mx-4">TYPOGRAPHY ✦</span>
@@ -135,7 +83,7 @@
 </div>
 </div>
 <!-- Selected Works Section -->
-<section class="bg-background-dark py-24 px-6 md:px-20">
+<section id="work" class="bg-background-dark py-24 px-6 md:px-20">
 <div class="max-w-7xl mx-auto">
 <div class="flex justify-between items-end mb-16">
 <h2 class="font-serif text-4xl md:text-6xl font-bold">Selected Works</h2>
